@@ -44,7 +44,7 @@ export async function fetchGames(gameIds: number[]): Promise<Game[]> {
     if (DEV) {
       console.log(
         "Updating stale games",
-        staleGames.map((g) => `${[g.id]} ${g.name}}`)
+        staleGames.map((g) => `${[g.id]} ${g.name}`)
       );
     }
     for (let staleGame of staleGames) {

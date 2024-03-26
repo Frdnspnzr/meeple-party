@@ -76,7 +76,14 @@
 }
 
 .collectionbuttons {
+  display: flex;
   background-color: var(--bs-border-color);
+  height: 40px;
+}
+
+.collectionbuttons button {
+  font-size: 22px;
+  line-height: 22px;
 }
 
 .collectionbuttons button:hover {

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Status Button matches snapshot for own on false 1`] = `
+exports[`Status Button matches snapshot for own when active 1`] = `
 <div>
   <button
     aria-label="States.Own"
@@ -15,7 +15,7 @@ exports[`Status Button matches snapshot for own on false 1`] = `
 </div>
 `;
 
-exports[`Status Button matches snapshot for own on true 1`] = `
+exports[`Status Button matches snapshot for own when not active 1`] = `
 <div>
   <button
     aria-label="States.Own"
@@ -30,7 +30,7 @@ exports[`Status Button matches snapshot for own on true 1`] = `
 </div>
 `;
 
-exports[`Status Button matches snapshot for wanttoplay on false 1`] = `
+exports[`Status Button matches snapshot for wanttoplay when active 1`] = `
 <div>
   <button
     aria-label="States.WantToPlay"
@@ -45,7 +45,7 @@ exports[`Status Button matches snapshot for wanttoplay on false 1`] = `
 </div>
 `;
 
-exports[`Status Button matches snapshot for wanttoplay on true 1`] = `
+exports[`Status Button matches snapshot for wanttoplay when not active 1`] = `
 <div>
   <button
     aria-label="States.WantToPlay"
@@ -60,7 +60,7 @@ exports[`Status Button matches snapshot for wanttoplay on true 1`] = `
 </div>
 `;
 
-exports[`Status Button matches snapshot for wishlist on false 1`] = `
+exports[`Status Button matches snapshot for wishlist when active 1`] = `
 <div>
   <button
     aria-label="States.Wishlist"
@@ -75,7 +75,7 @@ exports[`Status Button matches snapshot for wishlist on false 1`] = `
 </div>
 `;
 
-exports[`Status Button matches snapshot for wishlist on true 1`] = `
+exports[`Status Button matches snapshot for wishlist when not active 1`] = `
 <div>
   <button
     aria-label="States.Wishlist"

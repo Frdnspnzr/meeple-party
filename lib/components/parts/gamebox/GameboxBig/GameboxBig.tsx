@@ -2,24 +2,25 @@
 
 import AvatarStack from "@/components/AvatarStack/AvatarStack";
 import PersonList from "@/components/PersonList/PersonList";
-import StatusButton from "@/components/StatusButton/StatusButton";
 import { useModal } from "@/context/modalContext";
-import { StatusByUser } from "@/datatypes/collection";
+import { GameCollectionStatus, StatusByUser } from "@/datatypes/collection";
 import { Game } from "@/datatypes/game";
 import { UserProfile } from "@/datatypes/userProfile";
-import useCollectionStatus from "@/hooks/api/useCollectionStatus";
 import { useTranslation } from "@/i18n/client";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
 import { useCallback, useMemo } from "react";
-import { GameBoxProps } from "../../GameBox";
+import StatusButton from "../../StatusButton/StatusButton";
+import GameboxProps from "../interface";
 import styles from "./gameboxbig.module.css";
 
-export default function GameBoxBig({
+export default function GameboxBig({
   game,
-  friendCollection,
-}: Readonly<GameBoxProps>) {
+  friendCollections,
+  myCollection,
+  updateStatus,
+}: Readonly<GameboxProps>) {
   return (
     <div className={classNames("card", styles.card)}>
       {game.image ? (
@@ -42,7 +43,12 @@ export default function GameBoxBig({
         <Link href={`/app/game/${game.id}`}>{game.name}</Link>
       </h2>
 
-      <StatusList game={game} friendCollection={friendCollection} />
+      <StatusList
+        game={game}
+        friendCollection={friendCollections}
+        myCollection={myCollection}
+        updateStatus={updateStatus}
+      />
     </div>
   );
 }
@@ -85,9 +91,13 @@ function Metric({ text, label }: Readonly<{ text: string; label: string }>) {
 function StatusList({
   game,
   friendCollection,
+  myCollection,
+  updateStatus,
 }: Readonly<{
   game: Game;
   friendCollection?: StatusByUser;
+  myCollection: GameCollectionStatus;
+  updateStatus?: (status: Partial<GameCollectionStatus>) => void;
 }>) {
   return (
     <>
@@ -95,16 +105,22 @@ function StatusList({
         game={game}
         status="own"
         friends={friendCollection ? friendCollection.own : []}
+        myCollection={myCollection}
+        updateStatus={updateStatus}
       />
       <Status
         game={game}
         status="wanttoplay"
         friends={friendCollection ? friendCollection.wantToPlay : []}
+        myCollection={myCollection}
+        updateStatus={updateStatus}
       />
       <Status
         game={game}
         status="wishlist"
         friends={friendCollection ? friendCollection.wishlist : []}
+        myCollection={myCollection}
+        updateStatus={updateStatus}
       />
     </>
   );
@@ -114,26 +130,27 @@ function Status({
   game,
   friends,
   status,
+  myCollection,
+  updateStatus,
 }: Readonly<{
   game: Game;
   friends: UserProfile[];
+  myCollection: GameCollectionStatus;
   status: "own" | "wishlist" | "wanttoplay";
+  updateStatus?: (status: Partial<GameCollectionStatus>) => void;
 }>) {
   const { t } = useTranslation("default");
   const { t: ct } = useTranslation("collection");
-  const { data } = useCollectionStatus(game.id);
   const { open: openModal, close: closeModal } = useModal();
   const state = useMemo(() => {
-    if (!data) {
-      return false;
-    } else if (status === "own") {
-      return data.own;
+    if (status === "own") {
+      return myCollection.own;
     } else if (status === "wanttoplay") {
-      return data.wantToPlay;
+      return myCollection.wantToPlay;
     } else if (status === "wishlist") {
-      return data.wishlist;
+      return myCollection.wishlist;
     }
-  }, [data, status]);
+  }, [myCollection, status]);
 
   const translationBaseKey = useMemo(() => {
     if (status === "own") {
@@ -144,6 +161,29 @@ function Status({
       return "Wishlist";
     }
   }, [status]);
+
+  const toggle = useCallback(() => {
+    if (!updateStatus) return;
+    if (status === "own") {
+      updateStatus({
+        own: !myCollection.own,
+        wantToPlay: myCollection.wantToPlay,
+        wishlist: myCollection.wishlist,
+      });
+    } else if (status === "wanttoplay") {
+      updateStatus({
+        own: myCollection.own,
+        wantToPlay: !myCollection.wantToPlay,
+        wishlist: myCollection.wishlist,
+      });
+    } else if (status === "wishlist") {
+      updateStatus({
+        own: myCollection.own,
+        wantToPlay: myCollection.wantToPlay,
+        wishlist: !myCollection.wishlist,
+      });
+    }
+  }, [myCollection, status, updateStatus]);
 
   const showFriends = useCallback(() => {
     openModal({
@@ -165,8 +205,9 @@ function Status({
       >
         <StatusButton
           status={status}
-          gameId={game.id}
           className={styles.statusButton}
+          active={state || false}
+          toggle={toggle}
         />
         <div className={styles.statusText}>
           {state

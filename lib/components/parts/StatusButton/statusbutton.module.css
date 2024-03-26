@@ -1,0 +1,10 @@
+.button {
+  text-align: center;
+  width: 100%;
+  border: transparent;
+  background: transparent;
+}
+
+.spinner {
+  margin: auto;
+}
