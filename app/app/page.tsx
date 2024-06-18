@@ -1,17 +1,17 @@
 import GameCollection from "@/components/GameCollection/GameCollection";
 import {
-  GameCollection as GameCollectionType,
   GameCollectionStatus,
+  GameCollection as GameCollectionType,
   StatusByUser,
   UserGameCollection,
 } from "@/datatypes/collection";
-import { Game } from "@/datatypes/game";
+import { ExpandedGame } from "@/datatypes/game";
+import { UserProfile } from "@/datatypes/userProfile";
+import { getTranslation } from "@/i18n";
 import { getAllGamesOfFriends, getCollection } from "@/selectors/collections";
+import { emptyFilter } from "@/utility/filter";
 import { getServerUser } from "@/utility/serverSession";
 import styles from "./dashboard.module.css";
-import { UserProfile } from "@/datatypes/userProfile";
-import { emptyFilter } from "@/utility/filter";
-import { getTranslation } from "@/i18n";
 
 export const metadata = {
   title: "Dashboard",
@@ -118,7 +118,7 @@ export default async function App() {
 
 type CollectedGame = {
   friendCollections: UserGameCollection[] | undefined;
-  game: Game;
+  game: ExpandedGame;
   status: {
     own: boolean;
     wantToPlay: boolean;
@@ -139,7 +139,7 @@ function collectGames(
 }
 
 function uncollectGames(collectedGame: CollectedGame): {
-  game: Game;
+  game: ExpandedGame;
   status?: GameCollectionStatus;
   friendCollections?: StatusByUser;
 } {

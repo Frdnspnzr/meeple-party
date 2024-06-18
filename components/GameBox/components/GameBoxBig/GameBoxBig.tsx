@@ -9,6 +9,7 @@ import { Game } from "@/datatypes/game";
 import { UserProfile } from "@/datatypes/userProfile";
 import useCollectionStatus from "@/hooks/api/useCollectionStatus";
 import { useTranslation } from "@/i18n/client";
+import GameName from "@/lib/components/parts/GameName/GameName";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
@@ -39,7 +40,9 @@ export default function GameBoxBig({
       <MetricList game={game} />
 
       <h2 className={styles.name}>
-        <Link href={`/app/game/${game.id}`}>{game.name}</Link>
+        <Link href={`/app/game/${game.id}`}>
+          <GameName game={game} />
+        </Link>
       </h2>
 
       <StatusList game={game} friendCollection={friendCollection} />

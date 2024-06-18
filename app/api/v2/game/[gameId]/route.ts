@@ -1,10 +1,10 @@
-import { fetchGames } from "@/utility/games";
-import { Game } from "@prisma/client";
+import { ExpandedGame } from "@/datatypes/game";
+import { getGameData } from "@/utility/games";
 import { NextResponse } from "next/server";
 import validator from "validator";
 
 export interface GameGetResult {
-  game: Game;
+  game: ExpandedGame;
 }
 
 export async function GET(
@@ -20,7 +20,7 @@ export async function GET(
     throw new Error("Game ID format error");
   }
 
-  const games = await fetchGames([gameId]);
+  const games = await getGameData([gameId]);
 
   if (!games || games.length === 0) {
     return new Response(`Can not find game with id ${gameId}`, { status: 404 });

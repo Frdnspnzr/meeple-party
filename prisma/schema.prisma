@@ -5,8 +5,6 @@ generator client {
 datasource db {
   provider          = "postgresql"
   url               = env("DATABASE_URL")
-  directUrl         = env("DIRECT_URL")
-  shadowDatabaseUrl = env("SHADOW_DATABASE_URL")
 }
 
 model Account {
@@ -47,11 +45,11 @@ model User {
   profileComplete Boolean @default(false)
   role            Role    @default(USER)
 
-  realName   String?
-  about      String?
-  place      String?
-  image      String?
-  bggName    String?
+  realName String?
+  about    String?
+  place    String?
+  image    String?
+  bggName  String?
 
   preferences Json @default("{}") @db.Json
 
@@ -70,20 +68,31 @@ model VerificationToken {
 }
 
 model Game {
-  id          Int              @id
-  name        String
-  thumbnail   String?
-  image       String?
-  year        Int
-  playingTime Int
-  minPlayers  Int
-  maxPlayers  Int
-  weight      Float            @default(3)
-  BGGRating   Float?
-  BGGRank     Int?
-  updatedAt   DateTime?        @updatedAt
-  users       GameCollection[]
-  favoritedBy User[]
+  id             Int                 @id
+  name           String
+  thumbnail      String?
+  image          String?
+  year           Int
+  playingTime    Int
+  minPlayers     Int
+  maxPlayers     Int
+  weight         Float               @default(3)
+  BGGRating      Float?
+  BGGRank        Int?
+  wikidataId     String?
+  updatedAt      DateTime?           @updatedAt
+  users          GameCollection[]
+  favoritedBy    User[]
+  alternateNames AlternateGameName[]
+}
+
+model AlternateGameName {
+  game     Game   @relation(fields: [gameId], references: [id], onDelete: Cascade)
+  gameId   Int
+  language String
+  name     String
+
+  @@id([gameId, language])
 }
 
 model GameCollection {

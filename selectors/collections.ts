@@ -3,7 +3,7 @@ import {
   StatusByUser,
   UserGameCollection,
 } from "@/datatypes/collection";
-import { Game as CleanGame } from "@/datatypes/game";
+import { Game as CleanGame, prismaGameToExpandedGame } from "@/datatypes/game";
 import { UserProfile } from "@/datatypes/userProfile";
 import { prisma } from "@/db";
 import {
@@ -16,10 +16,10 @@ import {
 export async function getCollection(userId: string): Promise<GameCollection[]> {
   const result = await prisma.gameCollection.findMany({
     where: { userId },
-    include: { game: true, user: true },
+    include: { game: {include: {alternateNames: true}}, user: true },
   });
   return result.map((r) => ({
-    game: cleanGame(r.game),
+    game: prismaGameToExpandedGame(r.game),
     status: {
       own: r.own,
       wantToPlay: r.wantToPlay,
@@ -119,11 +119,11 @@ export async function getAllGamesOfFriends(
         ],
       },
     },
-    include: { user: true, game: true },
+    include: { user: true, game: {include: {alternateNames: true}} },
   });
   return result.map((r) => ({
     user: r.user,
-    game: cleanGame(r.game),
+    game: prismaGameToExpandedGame(r.game),
     status: {
       own: r.own,
       wantToPlay: r.wantToPlay,

@@ -8,23 +8,23 @@ exports[`Profile additional information matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-8bffd616 mantine-Flex-root __m__-r0"
+    class="m_8bffd616 mantine-Flex-root __m__-r0"
     style="gap: var(--mantine-spacing-md); justify-content: center; flex-wrap: wrap;"
   >
     <div
-      class="m-4081bf90 mantine-Group-root"
+      class="m_4081bf90 mantine-Group-root"
       style="--group-gap: var(--mantine-spacing-xs); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
     >
       <svg
         class="tabler-icon tabler-icon-home"
         fill="none"
-        height="calc(1rem * var(--mantine-scale))"
+        height="24"
         stroke="currentColor"
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="2"
         viewBox="0 0 24 24"
-        width="calc(1rem * var(--mantine-scale))"
+        width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -38,17 +38,17 @@ exports[`Profile additional information matches snapshot 1`] = `
         />
       </svg>
       <p
-        class="mantine-focus-auto m-b6d8b162 mantine-Text-root"
+        class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
       >
         place
       </p>
     </div>
     <div
-      class="m-4081bf90 mantine-Group-root"
+      class="m_4081bf90 mantine-Group-root"
       style="--group-gap: var(--mantine-spacing-xs); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
     >
       <svg
-        height="calc(1rem * var(--mantine-scale))"
+        height="24"
         style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2; padding-inline: 0.25rem;"
         version="1.1"
         viewBox="0 0 1607 2400"
@@ -61,7 +61,7 @@ exports[`Profile additional information matches snapshot 1`] = `
         />
       </svg>
       <p
-        class="mantine-focus-auto m-b6d8b162 mantine-Text-root"
+        class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
       >
         bgg name
       </p>
@@ -78,7 +78,7 @@ exports[`Profile additional information matches snapshot with no parameters 1`] 
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-8bffd616 mantine-Flex-root __m__-re"
+    class="m_8bffd616 mantine-Flex-root __m__-re"
     style="gap: var(--mantine-spacing-md); justify-content: center; flex-wrap: wrap;"
   />
 </div>
@@ -92,15 +92,15 @@ exports[`Profile additional information matches snapshot with only bgg name 1`] 
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-8bffd616 mantine-Flex-root __m__-r6"
+    class="m_8bffd616 mantine-Flex-root __m__-r6"
     style="gap: var(--mantine-spacing-md); justify-content: center; flex-wrap: wrap;"
   >
     <div
-      class="m-4081bf90 mantine-Group-root"
+      class="m_4081bf90 mantine-Group-root"
       style="--group-gap: var(--mantine-spacing-xs); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
     >
       <svg
-        height="calc(1rem * var(--mantine-scale))"
+        height="24"
         style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2; padding-inline: 0.25rem;"
         version="1.1"
         viewBox="0 0 1607 2400"
@@ -113,7 +113,7 @@ exports[`Profile additional information matches snapshot with only bgg name 1`] 
         />
       </svg>
       <p
-        class="mantine-focus-auto m-b6d8b162 mantine-Text-root"
+        class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
       >
         bgg name
       </p>
@@ -130,23 +130,23 @@ exports[`Profile additional information matches snapshot with only place 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-8bffd616 mantine-Flex-root __m__-ra"
+    class="m_8bffd616 mantine-Flex-root __m__-ra"
     style="gap: var(--mantine-spacing-md); justify-content: center; flex-wrap: wrap;"
   >
     <div
-      class="m-4081bf90 mantine-Group-root"
+      class="m_4081bf90 mantine-Group-root"
       style="--group-gap: var(--mantine-spacing-xs); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
     >
       <svg
         class="tabler-icon tabler-icon-home"
         fill="none"
-        height="calc(1rem * var(--mantine-scale))"
+        height="24"
         stroke="currentColor"
         stroke-linecap="round"
         stroke-linejoin="round"
         stroke-width="2"
         viewBox="0 0 24 24"
-        width="calc(1rem * var(--mantine-scale))"
+        width="24"
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
@@ -160,7 +160,7 @@ exports[`Profile additional information matches snapshot with only place 1`] = `
         />
       </svg>
       <p
-        class="mantine-focus-auto m-b6d8b162 mantine-Text-root"
+        class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
       >
         place
       </p>

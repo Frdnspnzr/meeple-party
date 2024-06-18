@@ -28,7 +28,7 @@ export default function BggRating({
         <div className={styles.rank}>
           {!rank || rank > 9999 ? <>&ndash;</> : rank}
         </div>
-        <div className={styles.rating}>{!!rating ? round(rating) : ""}</div>
+        <div className={styles.rating}>{getRating(rating)}</div>
       </div>
       <div className={styles.hexBottom}>&nbsp;</div>
     </div>
@@ -37,6 +37,19 @@ export default function BggRating({
 
 function round(i: number): number {
   return Math.round(i * 10) / 10;
+}
+
+function getRating(rating: number | null): string {
+  if (!rating) {
+    return "-";
+  }
+  const rounded = round(rating);
+  const asString = rounded.toString();
+  if (asString.includes(".")) {
+    return asString;
+  } else {
+    return `${asString}.0`;
+  }
 }
 
 function getRankStyle(rank: number | null) {

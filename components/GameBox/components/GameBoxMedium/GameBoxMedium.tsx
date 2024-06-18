@@ -4,6 +4,7 @@ import Avatar from "@/components/Avatar/Avatar";
 import CollectionStatusButtons from "@/components/CollectionStatusButtons/CollectionStatusButtons";
 import { UserProfile } from "@/datatypes/userProfile";
 import { useTranslation } from "@/i18n/client";
+import GameName from "@/lib/components/parts/GameName/GameName";
 import classNames from "classnames";
 import Image from "next/image";
 import Link from "next/link";
@@ -37,7 +38,9 @@ export default function GameBoxMedium({
         </Link>
         <div className={styles.title}>
           <h3 className="card-title">
-            <Link href={`/app/game/${game.id}`}>{game.name}</Link>
+            <Link href={`/app/game/${game.id}`}>
+              <GameName game={game} />
+            </Link>
           </h3>
         </div>
         <div className={styles.info}>

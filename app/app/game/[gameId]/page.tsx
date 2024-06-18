@@ -1,9 +1,11 @@
 import Avatar from "@/components/Avatar/Avatar";
 import BggRating from "@/components/BggRating/BggRating";
 import CollectionStatusButtons from "@/components/CollectionStatusButtons/CollectionStatusButtons";
-import { getTranslation } from "@/i18n";
+import { ExpandedGame } from "@/datatypes/game";
+import { getGameLanguage, getTranslation } from "@/i18n";
 import { getCollectionStatusOfFriends } from "@/selectors/collections";
 import { getBggGame } from "@/utility/bgg";
+import { getGameData } from "@/utility/games";
 import { getServerUser } from "@/utility/serverSession";
 import classNames from "classnames";
 import Image from "next/image";
@@ -35,63 +37,65 @@ export default async function Game({ params }: { params: { gameId: string } }) {
   }
   try {
     const user = await getServerUser();
-    const game = await getBggGame(id);
+    const bggGame = await getBggGame(id);
+    const game = (await getGameData([id]))[0];
+    const language = await getGameLanguage();
     const friendCollections = await getCollectionStatusOfFriends(id, user.id);
     const gameDesigners =
-      game.designers.length <= 5
-        ? game.designers
+      bggGame.designers.length <= 5
+        ? bggGame.designers
         : [
-            ...game.designers.slice(0, 5),
-            t("Page.More", { count: game.designers.length - 5 }),
+            ...bggGame.designers.slice(0, 5),
+            t("Page.More", { count: bggGame.designers.length - 5 }),
           ];
     const gameArtists =
-      game.artists.length <= 5
-        ? game.artists
+      bggGame.artists.length <= 5
+        ? bggGame.artists
         : [
-            ...game.artists.slice(0, 5),
-            t("Page.More", { count: game.artists.length - 5 }),
+            ...bggGame.artists.slice(0, 5),
+            t("Page.More", { count: bggGame.artists.length - 5 }),
           ];
 
     return (
       <div className={styles.container}>
         <div
           className={classNames(styles.header, {
-            [styles.noImage]: !game.image,
+            [styles.noImage]: !bggGame.image,
           })}
         >
-          {game.image && (
+          {bggGame.image && (
             <Image
-              src={game.image}
+              src={bggGame.image}
               width={600}
               height={200}
-              alt={game.name}
+              alt={bggGame.name}
               className={styles.headerImage}
               unoptimized
             />
           )}
           <div
             className={classNames(styles.headerContent, {
-              [styles.noImage]: !game.image,
+              [styles.noImage]: !bggGame.image,
             })}
           >
-            {game.image && (
+            {bggGame.image && (
               <Image
-                src={game.image || ""}
+                src={bggGame.image || ""}
                 width={200}
                 height={200}
-                alt={game.name}
+                alt={bggGame.name}
                 className={styles.titleImage}
                 unoptimized
               />
             )}
             <div className={styles.headerInformation}>
               <BggRating
-                rating={game.BGGRating}
-                rank={game.BGGRank}
+                rating={bggGame.BGGRating}
+                rank={bggGame.BGGRank}
                 className={styles.rating}
               />
-              <h2 className={styles.gameName}>{game.name}</h2>
-              <span className={styles.gameYear}>{game.year}</span>
+              <h2 className={styles.gameName}>{getName(game, language)}</h2>
+              <span className={styles.gameYear}>{bggGame.year}</span>
               {gameDesigners.length > 0 && (
                 <div className={classNames(styles.staff, styles.design)}>
                   <h3>{t("Page.Header.Design")}</h3>
@@ -118,9 +122,9 @@ export default async function Game({ params }: { params: { gameId: string } }) {
                   styles.additionalInfo
                 )}
               >
-                {game.maxPlayers === game.minPlayers
-                  ? game.maxPlayers
-                  : `${game.minPlayers}-${game.maxPlayers}`}
+                {bggGame.maxPlayers === bggGame.minPlayers
+                  ? bggGame.maxPlayers
+                  : `${bggGame.minPlayers}-${bggGame.maxPlayers}`}
                 <small>{t("Page.Header.Players")}</small>
               </div>
               <div
@@ -129,11 +133,11 @@ export default async function Game({ params }: { params: { gameId: string } }) {
                   styles.additionalInfo
                 )}
               >
-                {game.playingTime}
+                {bggGame.playingTime}
                 <small>{t("Page.Header.Minutes")}</small>
               </div>
               <div className={classNames(styles.weight, styles.additionalInfo)}>
-                {round(game.weight)}
+                {round(bggGame.weight)}
                 <small>{t("Page.Header.Weight")}</small>
               </div>
             </div>
@@ -141,12 +145,12 @@ export default async function Game({ params }: { params: { gameId: string } }) {
         </div>
         <div
           className={styles.description}
-          dangerouslySetInnerHTML={{ __html: game.description }}
+          dangerouslySetInnerHTML={{ __html: bggGame.description }}
         ></div>
         <div className={styles.meta}>
           <h3>{t("Page.Collections.YourCollection")}</h3>
           <div className={styles.group}>
-            <CollectionStatusButtons gameId={game.id} />
+            <CollectionStatusButtons gameId={bggGame.id} />
           </div>
           {friendCollections.own.length > 0 && (
             <div className={styles.group}>
@@ -201,4 +205,12 @@ export default async function Game({ params }: { params: { gameId: string } }) {
 
 function round(i: number): number {
   return Math.round(i * 10) / 10;
+}
+
+function getName(game: ExpandedGame, language: string): string {
+  const name = game.names.find((n) => n.language === language);
+  if (name) {
+    return name.name;
+  }
+  return game.name;
 }

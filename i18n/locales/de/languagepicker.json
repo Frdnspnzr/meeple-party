@@ -4,5 +4,9 @@
     "follow": "Wie Seitensprache",
     "en": "Englisch",
     "de": "Deutsch"
+  },
+  "NotWorkingWarning": {
+    "NotWorking": "Das funktioniert nicht",
+    "Text": "Die Spracherkennung funktioniert im Moment nicht und es wird immer auf Englisch zurückfallen. Sorry!"
   }
 }

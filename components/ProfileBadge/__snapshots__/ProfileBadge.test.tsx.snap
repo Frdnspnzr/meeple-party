@@ -8,11 +8,11 @@ exports[`Profile badge type admin matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-347db0ec mantine-Badge-root"
+    class="m_347db0ec mantine-Badge-root"
     style="--badge-radius: var(--mantine-radius-sm); --badge-bg: murple; --badge-color: var(--mantine-color-white); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
   >
     <span
-      class="m-91fdda9b mantine-Badge-section"
+      class="m_91fdda9b mantine-Badge-section"
       data-position="left"
     >
       <svg
@@ -42,7 +42,7 @@ exports[`Profile badge type admin matches snapshot 1`] = `
       </svg>
     </span>
     <span
-      class="m-5add502a mantine-Badge-label"
+      class="m_5add502a mantine-Badge-label"
     >
       Badges.Admin
     </span>
@@ -58,11 +58,11 @@ exports[`Profile badge type family matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-347db0ec mantine-Badge-root"
+    class="m_347db0ec mantine-Badge-root"
     style="--badge-radius: var(--mantine-radius-sm); --badge-bg: mink; --badge-color: var(--mantine-color-white); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
   >
     <span
-      class="m-91fdda9b mantine-Badge-section"
+      class="m_91fdda9b mantine-Badge-section"
       data-position="left"
     >
       <svg
@@ -83,7 +83,7 @@ exports[`Profile badge type family matches snapshot 1`] = `
       </svg>
     </span>
     <span
-      class="m-5add502a mantine-Badge-label"
+      class="m_5add502a mantine-Badge-label"
     >
       Badges.FriendsFamily
     </span>
@@ -99,11 +99,11 @@ exports[`Profile badge type friend matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-347db0ec mantine-Badge-root"
+    class="m_347db0ec mantine-Badge-root"
     style="--badge-radius: var(--mantine-radius-sm); --badge-bg: var(--mantine-color-cyan-filled); --badge-color: var(--mantine-color-white); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
   >
     <span
-      class="m-91fdda9b mantine-Badge-section"
+      class="m_91fdda9b mantine-Badge-section"
       data-position="left"
     >
       <svg
@@ -133,7 +133,7 @@ exports[`Profile badge type friend matches snapshot 1`] = `
       </svg>
     </span>
     <span
-      class="m-5add502a mantine-Badge-label"
+      class="m_5add502a mantine-Badge-label"
     >
       Badges.Friend
     </span>
@@ -149,11 +149,11 @@ exports[`Profile badge type me matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-347db0ec mantine-Badge-root"
+    class="m_347db0ec mantine-Badge-root"
     style="--badge-radius: var(--mantine-radius-sm); --badge-bg: var(--mantine-color-gray-filled); --badge-color: var(--mantine-color-white); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
   >
     <span
-      class="m-91fdda9b mantine-Badge-section"
+      class="m_91fdda9b mantine-Badge-section"
       data-position="left"
     >
       <svg
@@ -180,7 +180,7 @@ exports[`Profile badge type me matches snapshot 1`] = `
       </svg>
     </span>
     <span
-      class="m-5add502a mantine-Badge-label"
+      class="m_5add502a mantine-Badge-label"
     >
       Badges.You
     </span>
@@ -196,11 +196,11 @@ exports[`Profile badge type premium matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-347db0ec mantine-Badge-root"
+    class="m_347db0ec mantine-Badge-root"
     style="--badge-radius: var(--mantine-radius-sm); --badge-bg: gold; --badge-color: var(--mantine-color-white); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
   >
     <span
-      class="m-91fdda9b mantine-Badge-section"
+      class="m_91fdda9b mantine-Badge-section"
       data-position="left"
     >
       <svg
@@ -221,7 +221,7 @@ exports[`Profile badge type premium matches snapshot 1`] = `
       </svg>
     </span>
     <span
-      class="m-5add502a mantine-Badge-label"
+      class="m_5add502a mantine-Badge-label"
     >
       Badges.Premium
     </span>
@@ -237,11 +237,11 @@ exports[`Profile badge type user matches snapshot 1`] = `
     @media (max-width: 35.99375em) {.mantine-visible-from-xs {display: none !important;}}@media (min-width: 36em) {.mantine-hidden-from-xs {display: none !important;}}@media (max-width: 47.99375em) {.mantine-visible-from-sm {display: none !important;}}@media (min-width: 48em) {.mantine-hidden-from-sm {display: none !important;}}@media (max-width: 61.99375em) {.mantine-visible-from-md {display: none !important;}}@media (min-width: 62em) {.mantine-hidden-from-md {display: none !important;}}@media (max-width: 74.99375em) {.mantine-visible-from-lg {display: none !important;}}@media (min-width: 75em) {.mantine-hidden-from-lg {display: none !important;}}@media (max-width: 87.99375em) {.mantine-visible-from-xl {display: none !important;}}@media (min-width: 88em) {.mantine-hidden-from-xl {display: none !important;}}
   </style>
   <div
-    class="m-347db0ec mantine-Badge-root"
+    class="m_347db0ec mantine-Badge-root"
     style="--badge-radius: var(--mantine-radius-sm); --badge-bg: darkgray; --badge-color: var(--mantine-color-white); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
   >
     <span
-      class="m-91fdda9b mantine-Badge-section"
+      class="m_91fdda9b mantine-Badge-section"
       data-position="left"
     >
       <svg
@@ -265,7 +265,7 @@ exports[`Profile badge type user matches snapshot 1`] = `
       </svg>
     </span>
     <span
-      class="m-5add502a mantine-Badge-label"
+      class="m_5add502a mantine-Badge-label"
     >
       Badges.User
     </span>

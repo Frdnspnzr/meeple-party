@@ -1,7 +1,7 @@
 import { Game } from "@/datatypes/game";
 import { prisma } from "@/db";
 import { withUser } from "@/utility/apiAuth";
-import { fetchGames } from "@/utility/games";
+import { getGameData } from "@/utility/games";
 import { User } from "@prisma/client";
 import { NextApiRequest, NextApiResponse } from "next";
 
@@ -52,7 +52,7 @@ export default withUser(async function handle(
     try {
       const gameId = getGameId(req);
       const parameters = JSON.parse(req.body) as CollectionStatus;
-      const game = (await fetchGames([gameId]))[0];
+      const game = (await getGameData([gameId]))[0];
 
       if (parameters.own || parameters.wantToPlay || parameters.wishlist) {
         await upsertStatus(gameId, user.id, parameters);

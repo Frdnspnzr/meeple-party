@@ -1,3 +1,4 @@
+import { GameLanguage, PageLanguage } from "@/i18n/types";
 import { User } from "@prisma/client";
 
 export type UserProfile = Omit<
@@ -11,8 +12,8 @@ export type UserPreferences = {
   showPlaceInProfile: boolean;
   allowSearchByPlace: boolean;
   hideProfile: boolean;
-  pageLanguage: string;
-  gameLanguage: string;
+  pageLanguage: PageLanguage;
+  gameLanguage: GameLanguage;
 };
 
 export const defaultUserPreferences: UserPreferences = {

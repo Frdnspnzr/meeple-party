@@ -16,13 +16,13 @@ export function ProfileAdditionalInformation({
     <Flex wrap="wrap" gap="md" justify="center">
       {place && (
         <Group gap="xs">
-          <IconHome size={theme.fontSizes.md} />
+          <IconHome size={24} />
           <Text>{place}</Text>
         </Group>
       )}
       {bggName && (
         <Group gap="xs">
-          <IconBoardGameGeek height={theme.fontSizes.md} />
+          <IconBoardGameGeek height={24} />
           <Text>{bggName}</Text>
         </Group>
       )}

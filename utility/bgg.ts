@@ -1,7 +1,7 @@
 import { BggGame } from "@/datatypes/game";
+import { decodeHTML } from "entities";
 import { XMLParser } from "fast-xml-parser";
 import validator from "validator";
-import { decodeHTML } from "entities";
 
 const parser = new XMLParser({ ignoreAttributes: false });
 
@@ -169,11 +169,8 @@ function splitBggObject(bggObject: any): any[] {
 }
 
 function checkData(bggObject: any) {
-  if (!bggObject?.boardgame?.boardgame) {
-    return;
-  }
   if (bggObject.boardgames.boardgame.error) {
-    throw Error(`BGG API error: ${bggObject.boardgame.error["@_message"]}`);
+    throw Error(`BGG API error: ${bggObject.boardgames.boardgame.error["@_message"]}`);
   }
   if (bggObject.boardgames.boardgame["@_subtypemismatch"]) {
     throw Error(

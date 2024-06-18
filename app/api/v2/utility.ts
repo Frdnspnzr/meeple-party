@@ -1,8 +1,8 @@
 import { Relationship, RelationshipType } from "@/datatypes/relationship";
 import {
-  defaultUserPreferences,
   UserPreferences,
   UserProfile,
+  defaultUserPreferences,
 } from "@/datatypes/userProfile";
 import {
   Prisma,
@@ -27,7 +27,7 @@ export function convertToUserProfile(
     realName: allowRealName(user, friend) ? user.realName : null,
     about: user.about,
     place: allowPlace(user, friend) ? user.place : null,
-    bggName: allowBggName(user, friend) ? user.bggName : null
+    bggName: allowBggName(user, friend) ? user.bggName : null,
   };
 }
 
@@ -94,4 +94,12 @@ function getProfile(
       ? relationship.sender
       : relationship.recipient;
   return convertToUserProfile(profile, relationship.type === "FRIENDSHIP");
+}
+
+//TODO Document, test
+export function getCronAuthToken() {
+  if (!process.env.CRON_AUTH_TOKEN) {
+    throw "No cron auth token configured for current environment";
+  }
+  return process.env.CRON_AUTH_TOKEN;
 }

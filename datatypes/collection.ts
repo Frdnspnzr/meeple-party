@@ -1,4 +1,4 @@
-import { Game } from "./game";
+import { ExpandedGame } from "./game";
 import { UserProfile } from "./userProfile";
 
 export interface StatusByUser {
@@ -14,7 +14,7 @@ export type GameCollectionStatus = {
 };
 
 export interface GameCollection {
-  game: Game;
+  game: ExpandedGame;
   status: GameCollectionStatus;
 }
 

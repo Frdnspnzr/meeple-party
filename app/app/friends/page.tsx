@@ -1,7 +1,8 @@
 import CollectionChange from "@/components/CollectionChange/CollectionChange";
 import Person from "@/components/Person/Person";
+import { ExpandedGame, prismaGameToExpandedGame } from "@/datatypes/game";
 import { prisma } from "@/db";
-import { getTranslation } from "@/i18n";
+import { getGameLanguage, getTranslation } from "@/i18n";
 import { getFriends } from "@/selectors/relationships";
 import { getServerUser } from "@/utility/serverSession";
 import { Game, GameCollection, User } from "@prisma/client";
@@ -27,14 +28,15 @@ export default async function Friends() {
     },
     orderBy: { updatedAt: "desc" },
     take: 20,
-    include: { user: true, game: true },
+    include: { user: true, game: { include: { alternateNames: true } } },
   });
   let lastFriendId = "";
   return (
     <>
       <h2>{t("Activity.Title")}</h2>
       <div className="container">
-        {collectionUpdates.map((update) => {
+        {collectionUpdates.map(async (update) => {
+          const game = prismaGameToExpandedGame(update.game);
           const ret = (
             <div className="row" key={update.updatedAt?.toTimeString()}>
               <div className="col-lg-3">
@@ -53,10 +55,10 @@ export default async function Friends() {
                 )}
               </div>
               <CollectionChange
-                image={update.game.image!}
+                image={game.image!}
                 operation="add"
                 text={t(`Activity.Changes.${getChangeTranslationKey(update)}`, {
-                  game: update.game.name,
+                  game: await getGameName(game),
                   person: update.user.name,
                 })}
                 own={update.own}
@@ -109,4 +111,13 @@ function getChangeTranslationKey(
     keys.push("Wish");
   }
   return keys.join("");
+}
+
+async function getGameName(game: ExpandedGame) {
+  const language = await getGameLanguage();
+  const name = game.names.find((n) => n.language === language);
+  if (name) {
+    return name.name;
+  }
+  return game.name;
 }

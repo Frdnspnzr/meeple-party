@@ -29,8 +29,8 @@ export default async function RootLayout({
       <head>
         <ColorSchemeScript forceColorScheme="light" />
       </head>
-      <MantineProvider forceColorScheme="light" theme={theme}>
         <body>
+        <MantineProvider forceColorScheme="light" theme={theme}>
           <Script src="/bootstrap.bundle.min.js" />
           <AuthProvider>
             <UserProvider>
@@ -39,8 +39,8 @@ export default async function RootLayout({
             </UserProvider>
           </AuthProvider>
           <Footer />
+        </MantineProvider>
         </body>
-      </MantineProvider>
       <Script src="/bootstrap.bundle.min.js" />
     </html>
   );

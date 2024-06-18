@@ -1,7 +1,7 @@
 "use client";
 
 import { StatusByUser } from "@/datatypes/collection";
-import { Game } from "@/datatypes/game";
+import { ExpandedGame, Game } from "@/datatypes/game";
 import useGameBoxSize from "@/hooks/useGameBoxSize";
 import { CollectionStatus } from "@/pages/api/collection/[gameId]";
 import { useEffect, useState } from "react";
@@ -9,7 +9,7 @@ import GameBoxBig from "./components/GameBoxBig/GameBoxBig";
 import GameBoxMedium from "./components/GameBoxMedium/GameBoxMedium";
 
 export interface GameBoxProps {
-  game: Game;
+  game: ExpandedGame;
   status?: CollectionStatus;
   friendCollection?: StatusByUser;
   showFriendCollection: boolean;
@@ -21,7 +21,7 @@ export default function GameBox({
   friendCollection,
   showFriendCollection = false,
 }: Readonly<GameBoxProps & React.HTMLAttributes<HTMLDivElement>>) {
-  const [gameData, setGameData] = useState<Game>();
+  const [gameData, setGameData] = useState<ExpandedGame>();
   const [friendCollections, setFriendCollections] = useState<StatusByUser>();
   const [gameBoxSize] = useGameBoxSize();
 

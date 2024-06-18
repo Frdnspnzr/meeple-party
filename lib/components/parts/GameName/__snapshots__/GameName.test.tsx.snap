@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Part: GameName matches the snapshot for game with alternate name 1`] = `
+<div>
+  Alternate static game name
+</div>
+`;
+
+exports[`Part: GameName matches the snapshot for game without additional names 1`] = `
+<div>
+  Static game name
+</div>
+`;
+
+exports[`Part: GameName matches the snapshot for game without fitting alternate name 1`] = `
+<div>
+  Static game name
+</div>
+`;

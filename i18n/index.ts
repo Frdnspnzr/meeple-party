@@ -1,9 +1,10 @@
+import { getServerUser } from "@/utility/serverSession";
+import { getUserPreferences } from "@/utility/userProfile";
 import { createInstance } from "i18next";
 import resourcesToBackend from "i18next-resources-to-backend";
 import { initReactI18next } from "react-i18next/initReactI18next";
+import { determineGameLanguage, determineLanguage } from "./lib";
 import { fallbackLng, getOptions } from "./settings";
-import { getServerUser } from "@/utility/serverSession";
-import { getUserPreferences } from "@/utility/userProfile";
 
 const initI18next = async (ns?: string) => {
   const lng = await getLanguage();
@@ -32,11 +33,33 @@ export async function getTranslation(ns?: string, options: any = {}) {
   };
 }
 
-async function getLanguage() {
+/**
+ * Reads the current users prefered page language.
+ * @returns The two-letter language code of the selected language.
+ */
+export async function getLanguage() {
   try {
     const user = await getServerUser();
     const preferences = getUserPreferences(user);
-    return preferences.pageLanguage as string;
+    return determineLanguage(preferences.pageLanguage, fallbackLng);
+  } catch {
+    return fallbackLng;
+  }
+}
+
+/**
+ * Reads the current users prefered language for game names.
+ * @returns The two-letter language code of the selected language.
+ */
+export async function getGameLanguage() {
+  try {
+    const user = await getServerUser();
+    const preferences = getUserPreferences(user);
+    return determineGameLanguage(
+      preferences.gameLanguage,
+      preferences.pageLanguage,
+      fallbackLng
+    );
   } catch {
     return fallbackLng;
   }

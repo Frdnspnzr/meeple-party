@@ -1,7 +1,7 @@
 "use client";
 
 import { GameCollectionStatus, StatusByUser } from "@/datatypes/collection";
-import { Game } from "@/datatypes/game";
+import { ExpandedGame, Game } from "@/datatypes/game";
 import useGameBoxSize from "@/hooks/useGameBoxSize";
 import { useTranslation } from "@/i18n/client";
 import { emptyFilter } from "@/utility/filter";
@@ -20,7 +20,7 @@ import GameCollectionFilter, {
 import styles from "./gamecollection.module.css";
 
 export type GameInfo = {
-  game: Game;
+  game: ExpandedGame;
   status?: GameCollectionStatus;
   friendCollections?: StatusByUser;
 };
@@ -97,7 +97,7 @@ const GameCollection: React.FC<GameCollectionProps> = ({
         setPage(targetPage - 1);
       }
     }
-  }, [debouncedInputPage, totalNumberOfPages]);
+  }, [debouncedInputPage, totalNumberOfPages, page]);
 
   useEffect(() => {
     if (page > totalNumberOfPages) {

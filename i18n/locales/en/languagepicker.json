@@ -4,5 +4,9 @@
     "follow": "Same as page",
     "en": "English",
     "de": "German"
+  },
+  "NotWorkingWarning": {
+    "NotWorking": "Not working",
+    "Text": "Language detection currently does not work and will always fall back to English. Sorry!"
   }
 }

@@ -1,6 +1,6 @@
 import Avatar from "@/components/Avatar/Avatar";
 import { useModal } from "@/context/modalContext";
-import { Game } from "@/datatypes/game";
+import { ExpandedGame } from "@/datatypes/game";
 import useCollectionStatus from "@/hooks/api/useCollectionStatus";
 import { generateArray, generateUserProfile, render } from "@/utility/test";
 import { StatusByUser } from "../../../../datatypes/collection";
@@ -15,7 +15,7 @@ jest.mock("@/components/Avatar/Avatar", () => ({
 }));
 jest.mock("@/context/modalContext");
 
-const game: Game = {
+const game: ExpandedGame = {
   id: 123,
   name: "Test game",
   BGGRank: 23,
@@ -27,6 +27,12 @@ const game: Game = {
   year: 2018,
   image: "testimage",
   thumbnail: "testthumbnail",
+  wikidataId: "testwikidata",
+  names: [
+    { language: "en", name: "nameen" },
+    { language: "de", name: "namede" },
+    { language: "fr", name: "namefr" },
+  ],
 };
 
 describe("GameBoxBig", () => {

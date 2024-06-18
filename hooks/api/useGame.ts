@@ -1,5 +1,5 @@
 import { GameGetResult } from "@/app/api/v2/game/[gameId]/route";
-import { Game } from "@prisma/client";
+import { ExpandedGame, Game } from "@/datatypes/game";
 import { useQuery, useQueryClient } from "@tanstack/react-query";
 import axios from "axios";
 import { Result } from "./types";
@@ -32,11 +32,11 @@ export default function useGame(gameId: number): Result<Game> {
   };
 }
 
-export function useGameQuery(): (gameId: number) => Promise<Game> {
+export function useGameQuery(): (gameId: number) => Promise<ExpandedGame> {
   const queryClient = useQueryClient();
   const getKey = useGameQueryKey();
   return (gameId) => {
-    const cached = queryClient.getQueryData<Game>(getKey(gameId));
+    const cached = queryClient.getQueryData<ExpandedGame>(getKey(gameId));
     if (cached) {
       return Promise.resolve(cached);
     }

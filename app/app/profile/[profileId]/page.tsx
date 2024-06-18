@@ -1,13 +1,13 @@
 import UserProfilePage from "@/components/pages/profile/UserProfilePage";
+import { prismaGameToExpandedGame } from "@/datatypes/game";
 import { prisma } from "@/db";
 import { cleanUserDetails } from "@/pages/api/user";
 import { getServerUser } from "@/utility/serverSession";
 import {
-  Game,
   GameCollection as PrismaGameCollection,
   Relationship,
   RelationshipType,
-  User,
+  User
 } from "@prisma/client";
 import { notFound } from "next/navigation";
 import { Metadata } from "next/types";
@@ -61,7 +61,7 @@ export default async function ProfilePage({
       isMe={isMe}
       favorites={user.favorites}
       collection={user.games.map(({ game }) => ({
-        game: cleanGame(game),
+        game: prismaGameToExpandedGame(game),
         status: getStatus(game.id, myCollectionStatus),
       }))}
     />
@@ -91,11 +91,6 @@ function getAllFriendIds(user: UserWithRelationships): string[] {
   return [...sentFriendships, ...receivedFriendships];
 }
 
-function cleanGame(game: Game) {
-  const { updatedAt, ...cleanGame } = game;
-  return cleanGame;
-}
-
 const getUser = async (id: string, loggedInUserId?: string) => {
   const extendedUserData = await prisma.user.findUnique({
     where: { id },
@@ -108,7 +103,11 @@ const getUser = async (id: string, loggedInUserId?: string) => {
           own: true,
         },
         include: {
-          game: true,
+          game: {
+            include: {
+              alternateNames: true,
+            },
+          },
         },
       },
     },

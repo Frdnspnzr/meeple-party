@@ -1,19 +1,17 @@
 "use client";
 
-import { useUser } from "@/context/userContext";
 import { UserPreferences } from "@/datatypes/userProfile";
 import { useUserPreferences } from "@/hooks/useUserPreferences";
 import { useTranslation } from "@/i18n/client";
-import classNames from "classnames";
-import { language } from "gray-matter";
-import styles from "languagepicker.module.css";
+import { GameLanguage, Language, PageLanguage } from "@/i18n/types";
+import { Alert, Button, Group, Stack } from "@mantine/core";
 import { useRouter } from "next/navigation";
-import React, { useCallback, useMemo, useState } from "react";
+import React, { useCallback, useMemo } from "react";
 
 type LanguagePickerType = "page" | "game";
 
 interface LanguagePickerProps {
-  availableLanguages: string[];
+  availableLanguages: Language[];
   type: LanguagePickerType;
 }
 
@@ -38,29 +36,40 @@ const LanguagePicker: React.FC<LanguagePickerProps> = ({
   }, [loading, type, preferences]);
 
   const update = useCallback(
-    (language: string) => {
+    (language: Language) => {
       const mutator = getCurrentMutator(type);
-      updatePreferences(mutator(language)).then(() => router.refresh());
+      //TODO See if I can solve this more elegantly
+      updatePreferences(mutator(language as any)).then(() => router.refresh());
     },
     [router, type, updatePreferences]
   );
 
+  const icon = <i className="bi bi-emoji-frown-fill"></i>;
+
   return (
-    <>
-      {availableLanguages.map((language) => (
-        <button
-          type="button"
-          className={classNames("btn me-3 mb-2", {
-            ["btn-light"]: language !== current,
-            ["btn-primary"]: language === current,
-          })}
-          key={language}
-          onClick={() => update(language)}
+    <Stack>
+      <Group>
+        {availableLanguages.map((language) => (
+          <Button
+            variant={language === current ? "filled" : "default"}
+            key={language}
+            onClick={() => update(language)}
+          >
+            {t(`Languages.${language}`)}
+          </Button>
+        ))}
+      </Group>
+      {current === "auto" && (
+        <Alert
+          title={t("NotWorkingWarning.NotWorking")}
+          variant="light"
+          color="red"
+          icon={icon}
         >
-          {t(`Languages.${language}`)}
-        </button>
-      ))}
-    </>
+          {t("NotWorkingWarning.Text")}
+        </Alert>
+      )}
+    </Stack>
   );
 };
 
@@ -74,11 +83,13 @@ function getCurrentSelector(type: LanguagePickerType) {
 
 function getCurrentMutator(
   type: LanguagePickerType
-): (language: string) => Partial<UserPreferences> {
+):
+  | ((language: GameLanguage) => Partial<UserPreferences>)
+  | ((language: PageLanguage) => Partial<UserPreferences>) {
   if (type === "game") {
-    return (language) => ({ gameLanguage: language });
+    return (language: GameLanguage) => ({ gameLanguage: language });
   } else {
-    return (language) => ({ pageLanguage: language });
+    return (language: PageLanguage) => ({ pageLanguage: language });
   }
 }
 

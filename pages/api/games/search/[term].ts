@@ -1,14 +1,13 @@
 import {
   ExtendedGameCollection,
-  StatusByUser,
   GameCollectionStatus,
 } from "@/datatypes/collection";
-import { Game } from "@/datatypes/game";
+import { ExpandedGame } from "@/datatypes/game";
 import { prisma } from "@/db";
 import { withUser } from "@/utility/apiAuth";
 import { searchBggGames } from "@/utility/bgg";
 import { findFriendCollection } from "@/utility/collections";
-import { fetchGames } from "@/utility/games";
+import { getGameData } from "@/utility/games";
 import { GameCollection, RelationshipType, User } from "@prisma/client";
 import { XMLParser } from "fast-xml-parser";
 import { NextApiRequest, NextApiResponse } from "next";
@@ -26,7 +25,7 @@ export default withUser(async function handle(
   try {
     if (req.method === "GET") {
       const term = getSanitizedSearchTerm(req);
-      const games = await searchBggGames(term).then(fetchGames);
+      const games = await searchBggGames(term).then(getGameData);
       const enrichedGameData = await enrichGameData(games, user.id);
       res.status(200).json(enrichedGameData);
     } else {
@@ -39,7 +38,7 @@ export default withUser(async function handle(
 });
 
 async function enrichGameData(
-  games: Game[],
+  games: ExpandedGame[],
   userId: string
 ): Promise<ExtendedGameCollection[]> {
   const gameIds = games.map((g) => g.id);

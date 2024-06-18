@@ -5,7 +5,6 @@ import GamePill from "@/components/GamePill/GamePill";
 import GameSearch, {
   GameSearchChildren,
 } from "@/components/GameSearch/GameSearch";
-import PrefetchedGameData from "@/components/Prefetches/PrefetchedGameData";
 import Spinner from "@/components/Spinner/Spinner";
 import { Game } from "@/datatypes/game";
 import { useGameQuery } from "@/hooks/api/useGame";
@@ -270,7 +269,7 @@ const EditProfile: React.FC = () => {
             <label className="form-label">{t("EditScreen.Favorites")}</label>
             <br />
             {favorites ? (
-              <PrefetchedGameData data={favorites}>
+              <>
                 {favorites.map((f) => (
                   <GamePill gameId={f.id} key={f.id}>
                     &nbsp;
@@ -303,7 +302,7 @@ const EditProfile: React.FC = () => {
                 <div className="collapse" id="collapseGameSearch">
                   <GameSearch resultView={FavoriteGameResult} />
                 </div>
-              </PrefetchedGameData>
+              </>
             ) : (
               <Spinner />
             )}
@@ -353,7 +352,7 @@ function bindFavoriteGameResult(
     searchResult,
   }) => {
     return (
-      <PrefetchedGameData data={searchResult.map((c) => c.game)}>
+      <>
         {searchResult.map(({ game }) => (
           <GamePill gameId={game.id} key={game.id}>
             &nbsp;
@@ -369,7 +368,7 @@ function bindFavoriteGameResult(
             ></i>
           </GamePill>
         ))}
-      </PrefetchedGameData>
+      </>
     );
   };
   return FavoriteGameResult;

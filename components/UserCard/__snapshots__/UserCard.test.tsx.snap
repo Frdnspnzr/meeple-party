@@ -13,7 +13,7 @@ exports[`Profile header matches snapshot for full user details 1`] = `
     .__m__-r0{width:95vw;}@media(min-width: 62em){.__m__-r0{width:calc(18.75rem * var(--mantine-scale));}}
   </style>
   <div
-    class="m-6d731127 mantine-Stack-root __m__-r0"
+    class="m_6d731127 mantine-Stack-root __m__-r0"
     style="--stack-gap: var(--mantine-spacing-sm); --stack-align: center; --stack-justify: flex-start; background-color: rgb(165, 216, 255);"
   >
     <div
@@ -23,11 +23,11 @@ exports[`Profile header matches snapshot for full user details 1`] = `
       F
     </div>
     <div
-      class="m-347db0ec mantine-Badge-root"
+      class="m_347db0ec mantine-Badge-root"
       style="--badge-radius: var(--mantine-radius-sm); --badge-bg: murple; --badge-color: var(--mantine-color-white); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
     >
       <span
-        class="m-91fdda9b mantine-Badge-section"
+        class="m_91fdda9b mantine-Badge-section"
         data-position="left"
       >
         <svg
@@ -57,36 +57,36 @@ exports[`Profile header matches snapshot for full user details 1`] = `
         </svg>
       </span>
       <span
-        class="m-5add502a mantine-Badge-label"
+        class="m_5add502a mantine-Badge-label"
       >
         Badges.Admin
       </span>
     </div>
     <h2
-      class="m-8a5d1357 mantine-Title-root"
+      class="m_8a5d1357 mantine-Title-root"
       data-order="2"
       style="--title-fw: var(--mantine-h2-font-weight); --title-lh: var(--mantine-h2-line-height); --title-fz: var(--mantine-h2-font-size); font-weight: 500;"
     >
       Frdnspnzr
     </h2>
     <div
-      class="m-8bffd616 mantine-Flex-root __m__-r3"
+      class="m_8bffd616 mantine-Flex-root __m__-r3"
       style="gap: var(--mantine-spacing-md); justify-content: center; flex-wrap: wrap;"
     >
       <div
-        class="m-4081bf90 mantine-Group-root"
+        class="m_4081bf90 mantine-Group-root"
         style="--group-gap: var(--mantine-spacing-xs); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
       >
         <svg
           class="tabler-icon tabler-icon-home"
           fill="none"
-          height="calc(1rem * var(--mantine-scale))"
+          height="24"
           stroke="currentColor"
           stroke-linecap="round"
           stroke-linejoin="round"
           stroke-width="2"
           viewBox="0 0 24 24"
-          width="calc(1rem * var(--mantine-scale))"
+          width="24"
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
@@ -100,17 +100,17 @@ exports[`Profile header matches snapshot for full user details 1`] = `
           />
         </svg>
         <p
-          class="mantine-focus-auto m-b6d8b162 mantine-Text-root"
+          class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
         >
           Kaiserslautern
         </p>
       </div>
       <div
-        class="m-4081bf90 mantine-Group-root"
+        class="m_4081bf90 mantine-Group-root"
         style="--group-gap: var(--mantine-spacing-xs); --group-align: center; --group-justify: flex-start; --group-wrap: wrap;"
       >
         <svg
-          height="calc(1rem * var(--mantine-scale))"
+          height="24"
           style="fill-rule: evenodd; clip-rule: evenodd; stroke-linejoin: round; stroke-miterlimit: 2; padding-inline: 0.25rem;"
           version="1.1"
           viewBox="0 0 1607 2400"
@@ -123,7 +123,7 @@ exports[`Profile header matches snapshot for full user details 1`] = `
           />
         </svg>
         <p
-          class="mantine-focus-auto m-b6d8b162 mantine-Text-root"
+          class="mantine-focus-auto m_b6d8b162 mantine-Text-root"
         >
           Friedenspanzer
         </p>
@@ -146,7 +146,7 @@ exports[`Profile header matches snapshot for minimal user details 1`] = `
     .__m__-r9{width:95vw;}@media(min-width: 62em){.__m__-r9{width:calc(18.75rem * var(--mantine-scale));}}
   </style>
   <div
-    class="m-6d731127 mantine-Stack-root __m__-r9"
+    class="m_6d731127 mantine-Stack-root __m__-r9"
     style="--stack-gap: var(--mantine-spacing-sm); --stack-align: center; --stack-justify: flex-start; background-color: rgb(165, 216, 255);"
   >
     <div
@@ -156,11 +156,11 @@ exports[`Profile header matches snapshot for minimal user details 1`] = `
       F
     </div>
     <div
-      class="m-347db0ec mantine-Badge-root"
+      class="m_347db0ec mantine-Badge-root"
       style="--badge-radius: var(--mantine-radius-sm); --badge-bg: darkgray; --badge-color: var(--mantine-color-white); --badge-bd: calc(0.0625rem * var(--mantine-scale)) solid transparent;"
     >
       <span
-        class="m-91fdda9b mantine-Badge-section"
+        class="m_91fdda9b mantine-Badge-section"
         data-position="left"
       >
         <svg
@@ -184,20 +184,20 @@ exports[`Profile header matches snapshot for minimal user details 1`] = `
         </svg>
       </span>
       <span
-        class="m-5add502a mantine-Badge-label"
+        class="m_5add502a mantine-Badge-label"
       >
         Badges.User
       </span>
     </div>
     <h2
-      class="m-8a5d1357 mantine-Title-root"
+      class="m_8a5d1357 mantine-Title-root"
       data-order="2"
       style="--title-fw: var(--mantine-h2-font-weight); --title-lh: var(--mantine-h2-line-height); --title-fz: var(--mantine-h2-font-size); font-weight: 500;"
     >
       Frdnspnzr
     </h2>
     <div
-      class="m-8bffd616 mantine-Flex-root __m__-rc"
+      class="m_8bffd616 mantine-Flex-root __m__-rc"
       style="gap: var(--mantine-spacing-md); justify-content: center; flex-wrap: wrap;"
     />
   </div>
