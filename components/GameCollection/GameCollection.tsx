@@ -97,7 +97,7 @@ const GameCollection: React.FC<GameCollectionProps> = ({
         setPage(targetPage - 1);
       }
     }
-  }, [debouncedInputPage, totalNumberOfPages, page]);
+  }, [debouncedInputPage, totalNumberOfPages]);
 
   useEffect(() => {
     if (page > totalNumberOfPages) {

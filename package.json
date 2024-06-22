@@ -10,6 +10,7 @@
     "prisma migrate": "prisma migrate dev",
     "prisma studio": "prisma studio",
     "prisma generate": "prisma generate",
+    "prisma deploy": "prisma migrate deploy",
     "test": "jest",
     "test-watch": "jest --watch",
     "coverage": "jest --collect-coverage",
@@ -58,6 +59,8 @@
     "validator": "^13.9.0"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.4.1",
+    "@playwright/test": "^1.44.1",
     "@storybook/addon-essentials": "^7.6.3",
     "@storybook/addon-interactions": "^7.6.3",
     "@storybook/addon-links": "^7.6.3",

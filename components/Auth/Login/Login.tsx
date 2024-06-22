@@ -5,6 +5,7 @@ import Avatar from "@/components/Avatar/Avatar";
 import { useUser } from "@/context/userContext";
 import { useTranslation } from "@/i18n/client";
 import classNames from "classnames";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import Spinner from "../../../components/Spinner/Spinner";
 import LoginButton from "../LoginButton/LoginButton";
@@ -24,9 +25,12 @@ const Login: React.FC = () => {
             <Link href="/app" className="btn btn-primary mt-2">
               {t("Login.GoToApp")} <i className="bi bi-arrow-right-circle"></i>
             </Link>
-            <a href="/api/auth/signout" className="btn btn-secondary mt-2">
+            <button
+              className="btn btn-secondary mt-2"
+              onClick={() => signOut()}
+            >
               {t("Login.Logout")} <i className="bi bi-door-open"></i>
-            </a>
+            </button>
           </>
         )}
         {!loading && !user && <LoginButton />}
