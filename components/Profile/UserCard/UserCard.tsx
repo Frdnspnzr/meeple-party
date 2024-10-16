@@ -3,10 +3,10 @@
 import { UserProfile } from "@/datatypes/userProfile";
 import { MantineTheme, Stack } from "@mantine/core";
 import { Role } from "@prisma/client";
-import Avatar from "../Avatar/Avatar";
-import { ProfileAdditionalInformation } from "../Profile/AdditionalInformation/ProfileAdditionalInformation";
-import ProfileUsername from "../Profile/Username/ProfileUsername";
+import Avatar from "../../Avatar/Avatar";
+import { ProfileAdditionalInformation } from "../AdditionalInformation/ProfileAdditionalInformation";
 import ProfileBadge from "../ProfileBadge/ProfileBadge";
+import ProfileUsername from "../Username/ProfileUsername";
 
 export interface UserCardProps {
   user: UserProfile;

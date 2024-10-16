@@ -1,8 +1,8 @@
+import FriendRequestsBadge from "@/components/FriendRequests/FriendRequestsBadge/FriendRequestsBadge";
 import {
-  NavigationBar,
-  NavigationItem,
+    NavigationBar,
+    NavigationItem,
 } from "@/components/NavigationBar/NavigationBar";
-import FriendRequestsBadge from "@/components/FriendRequestsBadge/FriendRequestsBadge";
 import { getTranslation } from "@/i18n";
 
 const Navbar: React.FC = async () => {

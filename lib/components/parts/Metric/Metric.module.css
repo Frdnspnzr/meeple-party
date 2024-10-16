@@ -1,0 +1,19 @@
+.container {
+  aspect-ratio: 1.3;
+  width: 60px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.value {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.label {
+  font-size: 0.6rem;
+  font-weight: lighter;
+}

@@ -70,6 +70,16 @@ export async function befriendUser(myUserId: string, friendUserId: string) {
   });
 }
 
+export async function sendFriendRequest(fromUserId: string, toUserId: string) {
+  return await prisma.relationship.create({
+    data: {
+      senderId: fromUserId,
+      recipientId: toUserId,
+      type: RelationshipType.FRIEND_REQUEST,
+    },
+  });
+}
+
 export async function logInAsNewUser(
   context: BrowserContext,
   role: Role = Role.USER

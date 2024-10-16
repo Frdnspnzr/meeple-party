@@ -30,52 +30,52 @@ exports[`GameBoxBig Matches snapshot 1`] = `
       class="info"
     >
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           3.8
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.Weight
-        </div>
+        </small>
       </div>
       <hr
         class="metricDivider"
       />
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           120
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.PlayingTime
-        </div>
+        </small>
       </div>
       <hr
         class="metricDivider"
       />
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           1-5
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.Players
-        </div>
+        </small>
       </div>
     </div>
     <h2
@@ -250,52 +250,52 @@ exports[`GameBoxBig Matches snapshot for precise weight: default game 1`] = `
       class="info"
     >
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           3.1
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.Weight
-        </div>
+        </small>
       </div>
       <hr
         class="metricDivider"
       />
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           120
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.PlayingTime
-        </div>
+        </small>
       </div>
       <hr
         class="metricDivider"
       />
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           1-5
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.Players
-        </div>
+        </small>
       </div>
     </div>
     <h2
@@ -395,52 +395,52 @@ exports[`GameBoxBig Matches snapshot when not in collection: default game 1`] = 
       class="info"
     >
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           3.8
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.Weight
-        </div>
+        </small>
       </div>
       <hr
         class="metricDivider"
       />
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           120
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.PlayingTime
-        </div>
+        </small>
       </div>
       <hr
         class="metricDivider"
       />
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           1-5
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.Players
-        </div>
+        </small>
       </div>
     </div>
     <h2
@@ -540,52 +540,52 @@ exports[`GameBoxBig Matches snapshot without friend collection 1`] = `
       class="info"
     >
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           3.8
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.Weight
-        </div>
+        </small>
       </div>
       <hr
         class="metricDivider"
       />
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           120
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.PlayingTime
-        </div>
+        </small>
       </div>
       <hr
         class="metricDivider"
       />
       <div
-        class="metric"
+        class="container"
       >
-        <div
-          class="metricTitle"
+        <h3
+          class="value"
         >
           1-5
-        </div>
-        <div
-          class="metricLabel"
+        </h3>
+        <small
+          class="label"
         >
           Attributes.Players
-        </div>
+        </small>
       </div>
     </div>
     <h2

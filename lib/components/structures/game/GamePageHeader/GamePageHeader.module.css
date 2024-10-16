@@ -1,0 +1,114 @@
+.header {
+  width: 100%;
+  padding-top: 200px;
+  overflow: hidden;
+  z-index: 2;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+.headerContent {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem;
+  align-items: end;
+}
+
+.headerImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  filter: blur(5px) brightness(80%);
+  transform: scale(1.1);
+  object-fit: cover;
+  z-index: 1;
+}
+
+.titleImage {
+  max-width: 200px;
+  height: 100%;
+  flex: 0 0 content;
+}
+
+.headerInformation {
+  background-color: rgba(75, 15, 138, 0.5);
+  color: rgba(250, 250, 250);
+  flex-grow: 1;
+  display: flex;
+  align-items: end;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.headerMain {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  flex: 1 0 content;
+}
+
+.metrics {
+  display: flex;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex: 0 0 content;
+}
+
+.metrics > * {
+  flex-basis: 60px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+  font-weight: bold;
+  align-items: center;
+}
+
+.metrics > * > small {
+  font-size: 0.6rem;
+  font-weight: lighter;
+}
+
+.rating {
+  flex: 0 0 content;
+}
+
+.gameName {
+  margin: 0;
+}
+
+.personnel {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 2 0 content;
+  gap: 0.5rem;
+}
+
+.staff {
+  display: flex;
+  align-items: flex-end;
+  flex-basis: content;
+  flex-shrink: 0;
+}
+
+.staff h3 {
+  font-size: 1rem;
+  margin: 0;
+  margin-bottom: 0.03rem;
+  font-weight: bold;
+}
+
+.staff ul {
+  font-size: 0.9rem;
+  list-style-type: none;
+  font-weight: lighter;
+  padding: 0;
+  margin: 0;
+  margin-left: 0.5rem;
+  display: flex;
+  flex-direction: column-reverse;
+}

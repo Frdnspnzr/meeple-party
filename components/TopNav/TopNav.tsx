@@ -7,7 +7,7 @@ import { signOut } from "next-auth/react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
 import { useCallback } from "react";
-import FriendRequestsBadge from "../FriendRequestsBadge/FriendRequestsBadge";
+import FriendRequestsBadge from "../FriendRequests/FriendRequestsBadge/FriendRequestsBadge";
 import Logo from "../Logo/Logo";
 import Person from "../Person/Person";
 import styles from "./topnav.module.css";
