@@ -39,7 +39,7 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: build
-          path: ${{ github.workspace }}/.next
+          path: .next
           if-no-files-found: error
 
   e2e:
@@ -72,7 +72,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: build
-          path: ${{ github.workspace }}/.next
+          path: .next
       - name: Generate database bindings
         run: npm run "prisma generate"
       - name: Generate database tables
@@ -85,7 +85,7 @@ jobs:
         with:
           key: ${{ runner.os }}-snapshots-${{github.ref}}
           restore-keys: ${{ runner.os }}-snapshots-refs/heads/main
-          path: ${{ github.workspace }}/tests/e2e/snapshots/**
+          path: ./tests/e2e/snapshots/**
       - name: Update snapshots
         if: ${{steps.snapshots_cache.outputs.cache-hit != 'true' || inputs.update-snapshots == 'true'}}
         run: npx playwright test --update-snapshots
@@ -103,7 +103,7 @@ jobs:
         if: always()
         with:
           name: playwright-report
-          path: ${{ github.workspace }}/playwright-report/
+          path: playwright-report/
 
   unittest:
     runs-on: ubuntu-latest
@@ -136,10 +136,10 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: playwright-report
-          path: ${{ github.workspace }}/playwright-report/
+          path: playwright-report/
       - name: Upload Pages Artifact
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ${{ github.workspace }}/playwright-report/
+          path: playwright-report/
       - name: Deploy to GitHub Pages
         uses: actions/deploy-pages@v2
